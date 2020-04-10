@@ -1,0 +1,105 @@
+BIKE
+INPUT:pulsar
+      10
+      red
+OUTPUT:black
+       0
+       red
+       10.0
+class Bike:
+    def __init__(self, model_name, acceleration):
+        self.model_name = model_name
+        self.acceleration = acceleration
+        self.current_speed = 0
+        self.color = "black"
+
+    def accelerate(self):
+        self.current_speed += self.acceleration     
+    
+    
+def get_bike_object_color(bike_object):
+    return bike_object.color
+
+
+def get_bike_object_current_speed(bike_object):
+    return bike_object.current_speed
+    
+
+
+def change_bike_color(bike_object, new_color):
+         bike_object.color=new_color
+         return bike_object.color
+    
+
+
+def increase_bike_speed(bike_object):
+    return bike_object.accelerate()
+
+    
+
+if __name__ == "__main__":
+    model_name = input()
+    acceleration = float(input())
+    color = input()
+
+    bike = Bike(model_name=model_name, acceleration=acceleration)
+    print(get_bike_object_color(bike))
+
+    print(get_bike_object_current_speed(bike))
+
+    change_bike_color(bike, color)
+    print(get_bike_object_color(bike))
+
+    increase_bike_speed(bike)
+    print(get_bike_object_current_speed(bike))
+    
+    
+    
+PERSON
+INPUT:RAHUl
+OUTPUT:Rahul 10 years old
+
+class Person:
+    def __init__(self, name, age):
+        self.fname=name
+        self.age=age
+
+
+def get_person_details(person):
+      return "{} is {} years old".format(person.fname, person.age)
+
+
+if __name__ == "__main__":
+    name = input()
+    age = int(input())
+    person = Person(name=name, age=age)
+    print(get_person_details(person))
+
+
+
+RECTANGLE
+INPUT:12.2
+      10
+OUTPUT:122.0
+       44.4
+       
+class Rectangle:
+
+    def __init__(self, length, breadth):
+        self.length=length
+        self.breadth=breadth
+
+    def get_area(self):
+        return(self.length*self.breadth)
+        
+    def get_perimeter(self):
+      return 2*((self.length)+(self.breadth))
+     
+
+if __name__ == "__main__":
+    length = float(input())
+    breadth = float(input())
+
+    rectangle = Rectangle(length=length, breadth=breadth)
+    print(rectangle.get_area())
+    print(rectangle.get_perimeter())
